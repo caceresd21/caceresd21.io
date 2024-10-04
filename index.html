@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría de Decisiones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>TEORIA DE DECISIONES</h1>
+    
+    <div id="menu">
+        <h2>Seleccione el tipo de decisiones a resolver:</h2>
+        <button onclick="Incertidumbre.showIncertidumbre()">DECISIONES BAJO CONDICIONES DE INCERTIDUMBRE</button>
+        <button onclick="Riesgo.showRiesgo()">DECISIONES BAJO CONDICIONES DE RIESGO</button>
+    </div>
+
+    <!-- Sección para Decisiones bajo Incertidumbre -->
+    <div id="incertidumbre" class="hidden">
+        <h2>Decisiones bajo Incertidumbre</h2>
+        <label for="numAlternativas">Número de Alternativas:</label>
+        <input type="number" id="numAlternativas" min="1">
+        <label for="numEstados">Número de Estados del Sistema:</label>
+        <input type="number" id="numEstados" min="1">
+        <button onclick="Incertidumbre.generarMatrizIncertidumbre()">Generar Matriz de Decisiones</button>
+        <div id="matrizIncertidumbre"></div>
+        <div id="opcionesIncertidumbre" class="hidden">
+            <h3>Seleccione un criterio de decisión:</h3>
+            <button onclick="Incertidumbre.criterioMaximin()">Maximin</button>
+            <button onclick="Incertidumbre.criterioMaximax()">Maximax</button>
+            <button onclick="Incertidumbre.criterioSavage()">Savage (Minimax Regret)</button>
+            <button onclick="Incertidumbre.criterioHurwicz()">Hurwicz</button>
+            <button onclick="Incertidumbre.criterioLaplace()">Laplace</button>
+            <div id="resultadoIncertidumbre"></div>
+        </div>
+        <button onclick="volverMenu()">Volver al Menú Principal</button>
+    </div>
+
+    <!-- Sección para Decisiones bajo Riesgo -->
+    <div id="riesgo" class="hidden">
+        <h2>Decisiones bajo Riesgo</h2>
+        <label for="numAlternativasRiesgo">Número de Alternativas:</label>
+        <input type="number" id="numAlternativasRiesgo" min="1">
+        <label for="numEstadosRiesgo">Número de Estados Naturales:</label>
+        <input type="number" id="numEstadosRiesgo" min="1">
+        <button onclick="Riesgo.generarMatrizRiesgo()">Generar Matriz de Pagos</button>
+        <div id="matrizRiesgo"></div>
+        <div id="opcionesRiesgo" class="hidden">
+            <h3>Seleccione un criterio de decisión:</h3>
+            <button onclick="Riesgo.criterioVME()">Valor Monetario Esperado (VME)</button>
+            <button onclick="Riesgo.criterioPerdidaProbable()">Pérdida Probable</button>
+            <button onclick="Riesgo.criterioProbabilidadPerdida()">Probabilidad de Pérdida Monetaria</button>
+            <button onclick="Riesgo.criterioVarianza()">Varianza</button>
+            <div id="resultadoRiesgo"></div>
+        </div>
+        <button onclick="volverMenu()">Volver al Menú Principal</button>
+    </div>
+
+    <!-- Inclusión de los scripts -->
+    <script src="DecisionIncertidumbre.js"></script>
+    <script src="DecisionRiesgo.js"></script>
+    <script>
+        // Función para volver al menú principal
+        function volverMenu() {
+            document.getElementById('menu').style.display = 'block';
+            document.getElementById('incertidumbre').style.display = 'none';
+            document.getElementById('riesgo').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

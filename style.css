@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    background-color: rgb(201, 201, 201);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#resultadoIncertidumbre, #resultadoRiesgo {
+    margin-top: 20px;
+    text-align: center;
+}
+
+input {
+    margin: 5px;
+    width: 100px;
+    text-align: center;
+}
+
+#matrizIncertidumbre div, #matrizRiesgo div {
+    margin-bottom: 10px;
+    text-align: center;
+}
